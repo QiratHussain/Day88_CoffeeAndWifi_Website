@@ -17,7 +17,7 @@ class Cafe(db.Model):
     img_url: Mapped[float] = mapped_column(String, nullable=False)
     location: Mapped[float] = mapped_column(String, nullable=False)
     has_sockets: Mapped[float] = mapped_column(String, nullable=False)
-    has_toilets: Mapped[float] = mapped_column(String, nullable=False)
+    has_toilet: Mapped[float] = mapped_column(String, nullable=False)
     can_take_calls: Mapped[float] = mapped_column(String, nullable=False)
     seats: Mapped[float] = mapped_column(String, nullable=False)
     coffee_price: Mapped[float] = mapped_column(Float, nullable=False)
@@ -32,13 +32,15 @@ def home():
 
 @app.route("/cafes")
 def cafes():
-    return render_template("cafes.html")
+    with app.app_context():
+        result = db.session.execute(db.select(Cafe).order_by(Cafe.name))
+        cafes_list = result.scalars().all()
+    return render_template("cafes.html", data_list= cafes_list)
 
 
 
 if __name__== "__main__":
     app.run(debug=True)
-
 # TODO: 2. create a table webpage which shows a given data
 # TODO: 3. create a form that lets users add data to to db
 # TODO: 4. create db and feed data

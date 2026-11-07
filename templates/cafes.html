@@ -10,15 +10,25 @@
         <th>Location</th>
         <th>Wifi</th>
         <th>Sockets</th>
-        <th>Toilets</th>
+        <th>Toilet</th>
         <th>Seats</th>
         <th>Can take Calls</th>
       </tr>
     </thead>   
     <tbody> 
+      {% for data in data_list: %}
       <tr>
-        <td></td>
+        <td>{{data.name}} </td>
+        <td>{{data.coffee_price}} </td>
+        <td>{{data.map_url}} </td>
+        <td>{{data.has_wifi}}</td>
+        <td>{{data.has_sockets}}</td>
+        <td>{{data.has_toilet}}</td>
+        <td>{{data.has_seats}}</td>
+        <td>{{data.can_take_calls}}</td>
+
       </tr>
+      {% endfor %}
     </tbody>
   </main>
 {% endblock %}
