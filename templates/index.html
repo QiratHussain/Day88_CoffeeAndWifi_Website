@@ -1,1 +1,13 @@
 {% extends "base.html" %}
+
+{% block content %}
+<main class="main-container">
+
+    <div class="content-card">
+        <h1>Welcome to Coffee_and_Wifi</h1>
+        <p>Here you can find the cafes you'd love! </p>
+        <p>And yes you can share the cafes you love.</p>
+        <a href="{{ url_for('cafes') }}" class="btn">See Cafes</a>
+    </div>
+</main>
+{% endblock %}
