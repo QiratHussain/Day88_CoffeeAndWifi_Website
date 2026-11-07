@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Template</title>
+    <style>
+        /* Color Palette & Variables */
+        :root {
+            --bg-cream: #FDFBF7;
+            --bg-cream-dark: #F4EFE6;
+            --primary-brown: #4A3525;
+            --accent-brown: #8C6239;
+            --text-dark: #2C1E15;
+            --text-light: #FDFBF7;
+            --border-color: #E6DCD0;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            color: var(--accent-brown);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--primary-brown);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary-brown);
+            color: var(--text-light);
+            padding: 1.25rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(74, 53, 37, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--bg-cream-dark);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #FFFFFF;
+        }
+
+        /* Main Content Layout */
+        .main-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        /* Card / Content Box Styling */
+        .content-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(74, 53, 37, 0.03);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--primary-brown);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* UI Elements / Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-brown);
+            color: var(--text-light);
+            padding: 0.6rem 1.25rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-brown);
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-cream-dark);
+            color: var(--primary-brown);
+            text-align: center;
+            padding: 1.5rem 2rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Coffee_and_Wifi Cafes</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Add Cafe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Replaceable content container -->
+        <div class="content-card">
+            <h1>Welcome to Coffee_and_Wifi</h1>
+            <p>Here you can find the cafes you'd love! </p>
+            <p>And yes you can share the cafes you love.</p>
+            <button class="btn">See Cafes</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Coffee_and_Wifi. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
